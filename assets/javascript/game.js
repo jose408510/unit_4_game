@@ -76,7 +76,7 @@ $('#firstPhoto').on ('click', function(){
   })  
   $('#fourthPhoto').on ('click', function(){
     oneMore = oneMore + pic4;
-    $('#oneMore').text(oneMore);
+    $('#oneMore').text(oneMore);  
     console.log("New userTotal= " + oneMore);
           //sets win/lose conditions
         if (oneMore === random){
