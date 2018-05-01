@@ -1,15 +1,89 @@
+
+//  here are the wins and loses , and the box with a random number 
 var winner = 0;
 var losser = 0;
-var greenBox = 0;   
+var oneMore = 0;
 
 
-for (var i = 0; i < greenBox.length; i++);
-document.onkeyup = function(event){
-    var userScore = event.key.toLowerCase();
+//  random number generated for the pictures
+var pic1= Math.floor(Math.random()*11+1);
+var pic2= Math.floor(Math.random()*11+1);
+var pic3= Math.floor(Math.random()*11+1);
+var pic4= Math.floor(Math.random()*11+1);  
+
+var random = Math.floor(Math.random()*101+19);
+$('#greenBox').text(random);
+function reset(){
+    random = Math.floor(Math.random()*101+19);
+    pic1 = Math.floor(Math.random()*11+1);
+    pci2 = Math.floor(Math.random()*11+1);
+    pic3 = Math.floor(Math.random()*11+1);
+    pic4 = Math.floor(Math.random()*11+1);
+    oneMore = 0;
 }
+function yes(){
+    alert("You won!");
+      winner++; 
+      $('#winner').text(winner);
+      reset();
+}
+function lost(){
+    alert ("You lose!");
+      losser++;
+      $('#losser').text(losser);
+      reset();
+    }
 
-$('#winner').html(0);
-$('#losser').html(0);
-$('#greenBox').html(0);
-$('#oneMore').html(0);   
+$('#firstPhoto').on ('click', function(){
+    oneMore = oneMore + pic1;
+    console.log("New userTotal= " + oneMore);
+          //sets win/lose conditions
+        if (oneMore === random){
+          yes();
+        }
+        else if ( oneMore > random){
+          lost();
+          reset();
+        }   
+  })  
+  $('#secondPhoto').on ('click', function(){
+    oneMore = oneMore + pic2;
+    console.log("New userTotal= " + oneMore);
+          //sets win/lose conditions
+        if (oneMore === random){
+          yes();
+        }
+        else if ( oneMore > random){
+          lost();
+        }   
+  })  
+  $('#thirdPhoto').on ('click', function(){
+    oneMore = oneMore + pic3;
+    console.log("New userTotal= " + oneMore);
+          //sets win/lose conditions
+        if (oneMore === random){
+          yes();
+        }
+        else if ( oneMore > random){
+          lost();
+        }   
+  })  
+  $('#fourthPhoto').on ('click', function(){
+    oneMore = oneMore + pic4;
+    console.log("New userTotal= " + oneMore);
+          //sets win/lose conditions
+        if (oneMore === random){
+          yes();
+        }
+        else if ( oneMore > random){
+          lost();
+        }   
+  })  
+
+
+$('#winner').text(winner);
+$('#losser').text(losser);
+$('#oneMore').text(oneMore);
+$('#firstPhoto').text(oneMore);
+
 
