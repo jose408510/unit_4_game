@@ -13,19 +13,22 @@ var pic4= Math.floor(Math.random()*11+1);
 
 var random = Math.floor(Math.random()*101+19);
 $('#greenBox').text(random);
+
 function reset(){
-    random = Math.floor(Math.random()*101+19);
-    pic1 = Math.floor(Math.random()*11+1);
-    pci2 = Math.floor(Math.random()*11+1);
-    pic3 = Math.floor(Math.random()*11+1);
-    pic4 = Math.floor(Math.random()*11+1);
-    oneMore = 0;
+  random = Math.floor(Math.random()*101+19);
+  $('#greenBox').text(random);
+  pic1 = Math.floor(Math.random()*11+1);
+  pci2 = Math.floor(Math.random()*11+1);
+  pic3 = Math.floor(Math.random()*11+1);
+  pic4 = Math.floor(Math.random()*11+1);
+  oneMore = 0;
+  $('#oneMore').text(oneMore);
 }
 function yes(){
-    alert("You won!");
-      winner++; 
-      $('#winner').text(winner);
-      reset();
+  alert("You won!");
+    winner++; 
+    $('#winner').text(winner);
+    reset();
 }
 function lost(){
     alert ("You lose!");
@@ -36,6 +39,7 @@ function lost(){
 
 $('#firstPhoto').on ('click', function(){
     oneMore = oneMore + pic1;
+    $('#oneMore').text(oneMore);
     console.log("New userTotal= " + oneMore);
           //sets win/lose conditions
         if (oneMore === random){
@@ -48,6 +52,7 @@ $('#firstPhoto').on ('click', function(){
   })  
   $('#secondPhoto').on ('click', function(){
     oneMore = oneMore + pic2;
+    $('#oneMore').text(oneMore);
     console.log("New userTotal= " + oneMore);
           //sets win/lose conditions
         if (oneMore === random){
@@ -59,6 +64,7 @@ $('#firstPhoto').on ('click', function(){
   })  
   $('#thirdPhoto').on ('click', function(){
     oneMore = oneMore + pic3;
+    $('#oneMore').text(oneMore);
     console.log("New userTotal= " + oneMore);
           //sets win/lose conditions
         if (oneMore === random){
@@ -70,6 +76,7 @@ $('#firstPhoto').on ('click', function(){
   })  
   $('#fourthPhoto').on ('click', function(){
     oneMore = oneMore + pic4;
+    $('#oneMore').text(oneMore);
     console.log("New userTotal= " + oneMore);
           //sets win/lose conditions
         if (oneMore === random){
